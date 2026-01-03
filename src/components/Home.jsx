@@ -215,7 +215,7 @@ export default function Home() {
             <div className="relative mx-auto w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-full lg:h-96 xl:h-[28rem] max-w-md rounded-full border-4 border-orange-500 bg-gradient-to-br from-gray-700 to-gray-900 overflow-hidden shadow-2xl flex items-center justify-center order-1 lg:order-2">
               <div className="absolute inset-0 rounded-full ring-4 ring-orange-500/30 animate-pulse"></div>
               <img
-                src="../../public/image/vishal.png"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQHFQ27e8KZd8g/profile-displayphoto-shrink_400_400/B4DZttU4lJI8Ag-/0/1767065750921?e=1769040000&v=beta&t=DtX8tXtm3Ft7uTn_FVtKtq4nwauenURB87D8-P2ALOY"
                 alt="Vishal Profile Photo"
                 className="w-full h-full object-cover object-center rounded-full scale-105"
               />
