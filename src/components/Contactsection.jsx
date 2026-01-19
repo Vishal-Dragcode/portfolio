@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Send, X } from "lucide-react";
+import useTheme from '../hook/useTheme';
 
 const Toast = ({ message, type, onClose }) => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const Toast = ({ message, type, onClose }) => {
 };
 
 const ContactSection = () => {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,6 +56,20 @@ const ContactSection = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('success');
+
+  // Theme-based styles
+  const bgClass = theme === 'dark' ? 'bg-black' : 'bg-white';
+  const textClass = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const subTextClass = theme === 'dark' ? 'text-gray-500' : 'text-gray-600';
+  const inputBgClass = theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100';
+  const inputBorderClass = theme === 'dark' ? 'border-gray-800' : 'border-gray-300';
+  const inputFocusBorderClass = theme === 'dark' ? 'focus:border-gray-700' : 'focus:border-gray-400';
+  const inputPlaceholderClass = theme === 'dark' ? 'placeholder-gray-600' : 'placeholder-gray-500';
+  const inputTextClass = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const selectTextClass = theme === 'dark' ? 'text-gray-600' : 'text-gray-700';
+  const buttonBgClass = theme === 'dark' ? 'bg-orange-500 text-black' : 'bg-orange-500 text-black';
+  const buttonHoverClass = theme === 'dark' ? 'hover:bg-gray-200' : 'hover:bg-gray-800';
+  const dropdownArrowColor = theme === 'dark' ? '%236b7280' : '%234b5563';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -99,14 +115,14 @@ const ContactSection = () => {
         />
       )}
       
-      <div className="min-h-screen bg-black flex items-center justify-center px-4 py-6">
+      <div className={`min-h-screen ${bgClass} flex items-center justify-center px-4 py-6`} id="contact">
         <div className="w-full max-w-3xl">
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-3xl font-bold mb-4 text-[#ff6a00]">
               Contact me
             </h1>
-            <p className="text-gray-500">Cultivating Connections: Reach Out And Connect With Me</p>
+            <p className={subTextClass}>Cultivating Connections: Reach Out And Connect With Me</p>
           </div>
 
           {/* Contact Form */}
@@ -120,7 +136,7 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-700 transition-all"
+                  className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${inputTextClass} ${inputPlaceholderClass} focus:outline-none ${inputFocusBorderClass} transition-all`}
                   placeholder="Name"
                 />
               </div>
@@ -133,7 +149,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-700 transition-all"
+                  className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${inputTextClass} ${inputPlaceholderClass} focus:outline-none ${inputFocusBorderClass} transition-all`}
                   placeholder="Email"
                 />
               </div>
@@ -148,7 +164,7 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-700 transition-all"
+                  className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${inputTextClass} ${inputPlaceholderClass} focus:outline-none ${inputFocusBorderClass} transition-all`}
                   placeholder="Phone Number"
                 />
               </div>
@@ -160,9 +176,9 @@ const ContactSection = () => {
                   value={formData.serviceInterest}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-gray-600 focus:outline-none focus:border-gray-700 transition-all appearance-none"
+                  className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${selectTextClass} focus:outline-none ${inputFocusBorderClass} transition-all appearance-none`}
                   style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='${dropdownArrowColor}'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'right 0.75rem center',
                     backgroundSize: '1.5em 1.5em'
@@ -188,7 +204,7 @@ const ContactSection = () => {
                 value={formData.timeline}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-700 transition-all"
+                className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${inputTextClass} ${inputPlaceholderClass} focus:outline-none ${inputFocusBorderClass} transition-all`}
                 placeholder="Timeline"
               />
             </div>
@@ -201,7 +217,7 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows="6"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-700 transition-all resize-none"
+                className={`w-full px-4 py-3 ${inputBgClass} ${inputBorderClass} rounded-lg ${inputTextClass} ${inputPlaceholderClass} focus:outline-none ${inputFocusBorderClass} transition-all resize-none`}
                 placeholder="Project Details..."
               ></textarea>
             </div>
@@ -211,11 +227,11 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-white text-black font-medium py-3 px-8 rounded-lg hover:bg-gray-200 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center"
+                className={`${buttonBgClass} font-medium py-3 px-8 rounded-lg ${buttonHoverClass} transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center`}
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
