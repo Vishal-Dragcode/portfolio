@@ -12,7 +12,6 @@ const Resume = () => {
     { name: "Git And GitHub", percentage: 100 },
     { name: "MongoDB & SQL", percentage: 80 },
     { name: "Docker", percentage: 70 },
-    { name: "Java", percentage: 50 },
     { name: "Jenkins/CodeBuild", percentage: 60 },
     { name: "Amazon Web Services", percentage: 70 }
   ];
@@ -93,37 +92,115 @@ const Resume = () => {
             Featured Projects
           </h2>
 
-          <div className={`${cardBgClass} ${borderClass} rounded-2xl p-8`}>
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-2xl font-bold">
-                Women Empowering Management
-              </h3>
-              <a 
-                href="https://womanej.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition"
-              >
-                <ExternalLink className="w-5 h-5" />
-                Live Demo
-              </a>
+          <div className="space-y-8">
+            {/* Project 1: Women Empowering Management */}
+            <div className={`${cardBgClass} ${borderClass} rounded-2xl p-8`}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold">
+                  Women Empowering Management
+                </h3>
+                <a 
+                  href="https://womanej.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Live Demo
+                </a>
+              </div>
+              <p className={`${subTextClass} mb-4 font-semibold`}>E-commerce Application</p>
+              
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Built a full-stack e-commerce web application using Next.js, Node.js, Express.js, and MongoDB.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Implemented key modules such as product listing, user authentication, cart management, and order workflow.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Integrated REST APIs for smooth data handling and real-time updates.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Optimized the application for responsive UI, performance, and scalable backend structure.</span>
+                </li>
+              </ul>
             </div>
-            <p className={`${subTextClass} mb-2 font-semibold`}>E-commerce Application</p>
-            
-            <ul className="space-y-3">
-              <li className="flex gap-3">
-                <span className="text-yellow-500 mt-1">•</span>
-                <span className={paragraphClass}>Developed a full-stack e-commerce web application using Next.js, Node.js, Express.js, and MongoDB.</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-yellow-500 mt-1">•</span>
-                <span className={paragraphClass}>Implemented product listing, user authentication, cart management, and order workflow with REST API integration.</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-yellow-500 mt-1">•</span>
-                <span className={paragraphClass}>Focused on responsive UI, performance optimization, and scalable backend architecture.</span>
-              </li>
-            </ul>
+
+            {/* Project 2: ChangXpert */}
+            <div className={`${cardBgClass} ${borderClass} rounded-2xl p-8`}>
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold">
+                  ChangXpert
+                </h3>
+              </div>
+              <p className={`${subTextClass} mb-4 font-semibold`}>Online Classes & Courses Platform</p>
+              
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Developed a full-stack course platform where users can explore and enroll in training programs.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Built responsive and dynamic UI using React.js / Next.js for smooth navigation and user flow.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Created and integrated REST APIs using Node.js and Express.js for course and user management.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Managed database operations using MongoDB with structured schema and optimized queries.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Implemented course listing, course details, and maintainable code with MERN best practices.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Project 3: Suraj Innovations */}
+            <div className={`${cardBgClass} ${borderClass} rounded-2xl p-8`}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold">
+                  Suraj Innovations
+                </h3>
+                <a 
+                  href="https://surajinnovations.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Live Demo
+                </a>
+              </div>
+              <p className={`${subTextClass} mb-4 font-semibold`}>Static Business Website</p>
+              
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Developed a responsive static business website using React.js with clean UI and modern layout.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Created reusable components and maintained proper folder structure for better code management.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Implemented smooth navigation, optimized assets, and ensured mobile-friendly design.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-yellow-500 mt-1">•</span>
+                  <span className={paragraphClass}>Improved maintainability by organizing pages, components, and styling in a structured format.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
